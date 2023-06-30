@@ -1,0 +1,15 @@
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+  .top-div{
+    background-image: url("images/pattern-bg-desktop.png");
+  }
+  
+  #map { height: 380px; }

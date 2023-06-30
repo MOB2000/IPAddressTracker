@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
+  <script src="script.js"></script>
+
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+</head>
+
+<body>
+
+  <div class="top-div pt-4 pb-5 text-center">
+    <h1 class="text-white">
+      IP Address Tracker
+    </h1>
+
+    <form id="form">
+      <div class="input-group mt-4 w-50 mx-auto rounded-circle">
+
+        <input id="ipInput" type="text" required class="form-control rounded-start-4"
+          placeholder="Search for any IP address or domain" aria-label="Search for any IP address or domain"
+          aria-describedby="button-addon2">
+        <div class="bg-dark p-3 rounded-end-4" onclick="submitForm()">
+          <img src="images/icon-arrow.svg" alt="arrow" id="button-addon2">
+        </div>
+
+      </div>
+      <p class="text-danger" id="error"></p>
+    </form>
+  </div>
+
+  <div class="row mx-auto w-50 rounded-4">
+
+    <div class="col-md-3 border-end">
+      <p class="text-secondary text-uppercase">Ip Address</p>
+      <p id="ip" class="fw-bold">-</p>
+    </div>
+
+    <div class="col-md-3 border-end">
+      <p class="text-secondary text-uppercase">Location</p>
+      <p id="location" class="fw-bold">-</p>
+    </div>
+
+    <div class="col-md-3 border-end">
+      <p class="text-secondary text-uppercase">Time Zone</p>
+      <p class="fw-bold">UTC
+        <span id="timezone" class="fw-bold">-</span>
+      </p>
+    </div>
+
+    <div class="col-md-3">
+      <p class="text-secondary text-uppercase">ISP</p>
+      <p id="isp" class="fw-bold">-</p>
+    </div>
+
+  </div>
+
+
+  <div id="map"></div>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission and page reload
+ 
+    });
+  </script>
+</body>
+
+</html>
